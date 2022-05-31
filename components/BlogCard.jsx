@@ -4,30 +4,46 @@ import Link from 'next/link';
 const BlogCard = (props) => {
 
     const styles = {
-        card: `flex flex-col cursor-pointer shadow-2xl mt-8 m-4 w-1/3 rounded-2xl p-4`,
-        imageContainer: `mb-auto`,
-        coverPhoto: `w-full object-cover rounded-lg`,
+        card: `bg-white cursor-pointer shadow-2xl m-4 w-64 rounded-2xl rounded-b-xl p-0`,
+
+        imageContainer: ``,
+        coverImage: `w-full object-cover rounded-xl rounded-b-none`,
+
+        text: `p-2`,
+        datePublished: `text-sm text-gray-500`,
+        postTitle: `font-semibold text-lg`,
+
         details: `mt-4 flex justify-between items-center text-sm`,
         author: `w-12 flex items-center `,
-        postTitle: `mt-2 font-semibold text-lg`
+        authorImage: `rounded-full w-8 h-8 mr-2`,
+        authorName: ``,
+        date: `text-gray-600`,
     };
 
     return (
-        <div className={styles.card}>
-            <Link href={`/posts/${props.slug}`}>
-                <div className={styles.imageContainer}>
-                    <img className={styles.coverPhoto} src={props.coverPhoto.url} alt="Cover photo" />
-                </div>
-            </Link>
-            <div className={styles.text}>
-                <h2 className={styles.postTitle}>{props.title}</h2>
-                <div className={styles.details}>
-                    <div className={styles.author}>
-                        <img className='rounded-full' src={props.author.avatar.url} alt="Author avatar" />
-                        <h3 className='ml-2'>{props.author.name}</h3>
+        <div key={props.title} className="cursor-pointer flex flex-col rounded-lg shadow-lg overflow-hidden m-4">
+            <div className="flex-shrink-0">
+                <Link href={`/posts/${props.slug}`}>
+                    <img className="h-48 w-full object-cover" src={props.coverPhoto.url} alt="Cover photo" />
+                </Link>
+            </div>
+            <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+                <h4 className='font-semibold text-lg'>
+                    {props.title}
+                </h4>
+                <div className="mt-6 flex items-center">
+                    <div className="flex-shrink-0">
+                        <img className="h-10 w-10 rounded-full" src={props.author.avatar.url} alt="Nathan profile" />
                     </div>
-                    <div className={styles.date}>
-                        <h3 className='text-md'>{props.datePublished}</h3>
+                    <div className="ml-3">
+                        <p className="text-sm font-medium text-gray-900">
+                            <a target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/nathan-galindo-840835195/' className="hover:underline">
+                                {props.author.name}
+                            </a>
+                        </p>
+                        <div className="flex space-x-1 text-sm text-gray-500">
+                            <time dateTime={props.datePublished}>{props.datePublished}</time>
+                        </div>
                     </div>
                 </div>
             </div>
