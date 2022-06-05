@@ -2,7 +2,7 @@ import React from 'react';
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
-const Navbar = ({ selected }) => {
+const Navbar = ({ selected, setOpenContact }) => {
 
     const navigation = [
         { name: 'blog', href: '#', special: false },
@@ -40,6 +40,12 @@ const Navbar = ({ selected }) => {
                                 {/* DESKTOP MENU */}
                                 <div className="hidden sm:block sm:ml-6">
                                     <div className="flex space-x-4">
+                                        <button
+                                            onClick={() => setOpenContact(true)}
+                                            className='px-3 py-1 rounded-full text-lg font-semibold text-white hover:text-gray-800 hover:bg-gray-300 border-2 border-gray-300'
+                                        >
+                                            reach out
+                                        </button>
                                         <button
                                             className='px-3 py-1 rounded-full text-lg font-semibold text-white hover:text-gray-800 border-2 border-gray-300 bg-gradient-to-r from-blue-400 to-purple-400'
                                         >

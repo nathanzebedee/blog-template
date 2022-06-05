@@ -17,12 +17,11 @@ const HeaderCategories = ({ categoryType, setCategoryType }) => {
                 <div
                     key={category.type}
                     onClick={() => setCategoryType(category.type)}
-                    className={`
-                        cursor-pointer bg-gradient-to-r from-blue-100 to-purple-100
-                        rounded-md h-20 flex justify-center items-center font-bold tracking-wider text-xl
-                        md:text-2xl lg:text-3xl hover:from-[#302f3d] hover:to-[#302f3d] hover:text-white hover:border-2
-                        ${categoryType === category.type && 'from-[#302f3d] to-[#302f3d] text-gray-50 border-2'} text-[#302f3d]
-                    `}
+                    className={
+                        categoryType === category.type
+                            ? `flex cursor-pointer text-gray-300 border-2 rounded-md h-20 justify-center items-center font-bold tracking-wider text-xl md:text-2xl lg:text-3xl`
+                            : `flex cursor-pointer text-[#302f3d] bg-gradient-to-r from-blue-100 to-purple-100 border-2 rounded-md h-20 justify-center items-center font-bold tracking-wider text-xl md:text-2xl lg:text-3xl`
+                        }
                 >
                     <h4>{category.type}</h4>
                 </div>

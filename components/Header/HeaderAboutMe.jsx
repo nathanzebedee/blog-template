@@ -15,12 +15,14 @@ const HeaderAboutMe = () => {
                 <img src='NathanPhoto.jpg' className='rounded-xl col-span-1' />
                 <div className='col-span-2 p-4 pt-0 rounded-xl text-xl'>
                     <p>
+                        <span className='text-2xl tracking-wide font-bold underline'>whoami</span><br></br>
                         hello, my name is nathan galindo and i am an honors student
                         studying management information systems and business analytics at <a href='https://www.baylor.edu/' target='_blank' rel='noreferrer' className='underline cursor-pointer hover:text-pink-200'>baylor university</a>.
                         i am a full stack developer with interests in blockchain technology and cybersecurity. i write about
                         student life, my journey as a software engineer, as well as reflections on my personal opinions and experiences.
                     </p>
-                    <p className='text-gray-300 mt-4'>
+                    <p className='mt-6'>
+                        <span className='text-2xl tracking-wide font-bold underline'>disclaimer</span><br></br>
                         please note that the statements on my blog reflect my personal opinions and do not
                         represent the views or policies of my employer, past or present,
                         or any other organization with which i may be affiliated.

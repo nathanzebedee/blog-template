@@ -6,6 +6,7 @@ import BlogCard from '../components/BlogCard';
 import Header from '../components/Header/Header';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ReachOut from '../components/ReachOut';
 
 const graphCMS = new GraphQLClient(process.env.REACT_APP_GRAPH_CMS_API);
 
@@ -36,6 +37,7 @@ export const getStaticProps = async () => {
 const Home = ({ posts }) => {
 
     const [selected, setSelected] = useState('blog');
+    const [openContact, setOpenContact] = useState(false)
 
     return (
         <>
@@ -47,8 +49,10 @@ const Home = ({ posts }) => {
             <main className='flex flex-col flex-wrap min-h-screen items-center bg-[#302f3d]'>
                 <Navbar
                     selected={selected}
-                    setSelected={setSelected}
+                    setOpenContact={setOpenContact}
                 />
+                
+                <ReachOut openContact={openContact} setOpenContact={setOpenContact} />
 
                 <Header />
 
