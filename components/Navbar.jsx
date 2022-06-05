@@ -2,12 +2,11 @@ import React from 'react';
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
-const Navbar = ({ selected, setOpenContact }) => {
+const Navbar = ({ selected, setOpenContact, setOpenSubscribe }) => {
 
     const navigation = [
-        { name: 'blog', href: '#', special: false },
-        { name: 'about', href: '#', special: false },
-        { name: 'contact', href: '#', special: false },
+        { name: 'reach out', special: false },
+        { name: 'newsletter sign up', special: false },
     ];
 
     function classNames(...classes) {
@@ -33,7 +32,7 @@ const Navbar = ({ selected, setOpenContact }) => {
                             </div>
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
                                 <div className="flex-shrink-0 flex items-center">
-                                    <h3 className='text-white font-semibold text-2xl'>
+                                    <h3 className='text-white font-semibold text-lg sm:text-2xl'>
                                         nathan's website 🌚
                                     </h3>
                                 </div>
@@ -47,6 +46,7 @@ const Navbar = ({ selected, setOpenContact }) => {
                                             reach out
                                         </button>
                                         <button
+                                            onClick={() => setOpenSubscribe(true)}
                                             className='px-3 py-1 rounded-full text-lg font-semibold text-white hover:text-gray-800 border-2 border-gray-300 bg-gradient-to-r from-blue-400 to-purple-400'
                                         >
                                             subscribe
@@ -64,10 +64,16 @@ const Navbar = ({ selected, setOpenContact }) => {
                                 <Disclosure.Button
                                     key={item.name}
                                     as="a"
-                                    href={item.href}
                                     aria-current={selected === item.name ? 'page' : undefined}
+                                    onClick={
+                                        item.name === 'reach out'
+                                            ? () => setOpenContact(true)
+                                            : () => setOpenSubscribe(true)
+                                    }
                                     className={classNames(
-                                        selected === item.name ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                        selected === item.name
+                                            ? 'bg-gray-900 text-white'
+                                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                         'block px-3 py-2 rounded-md text-base font-medium'
                                     )}
                                 >

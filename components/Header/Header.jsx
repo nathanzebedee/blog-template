@@ -15,7 +15,7 @@ const Header = () => {
     }, [categoryType]);
 
     return (
-        <section className='text-white w-full p-4 hidden sm:block'>
+        <section className='text-white w-full p-4'>
             <div className='m-2 rounded-xl border-2 h-max max-w-7xl flex flex-col mx-auto'>
                 <HeaderNav aboutMe={aboutMe} setAboutMe={setAboutMe} />
                 <div className='m-4'>
