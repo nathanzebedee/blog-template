@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
-const Navbar = ({ selected, setSelected }) => {
+const Navbar = ({ selected }) => {
 
     const navigation = [
         { name: 'blog', href: '#', special: false },
@@ -41,7 +41,7 @@ const Navbar = ({ selected, setSelected }) => {
                                 <div className="hidden sm:block sm:ml-6">
                                     <div className="flex space-x-4">
                                         <button
-                                            className='px-3 py-1 rounded-full text-lg font-semibold text-white border-2 border-gray-300 bg-gradient-to-r from-blue-400 to-purple-400'
+                                            className='px-3 py-1 rounded-full text-lg font-semibold text-white hover:text-gray-800 border-2 border-gray-300 bg-gradient-to-r from-blue-400 to-purple-400'
                                         >
                                             subscribe
                                         </button>

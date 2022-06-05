@@ -7,9 +7,7 @@ import Header from '../components/Header/Header';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const graphCMS = new GraphQLClient(
-    'https://api-us-east-1.graphcms.com/v2/cl3tb2rglblws01xk5pqwdwo6/master'
-);
+const graphCMS = new GraphQLClient(process.env.REACT_APP_GRAPH_CMS_API);
 
 const query = gql`
     {

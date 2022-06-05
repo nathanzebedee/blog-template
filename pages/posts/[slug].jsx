@@ -49,7 +49,6 @@ const BlogPost = ({ post }) => {
         <main className={styles.blog}>
             <img src={post.coverPhoto} className={styles.cover} alt="Post cover photo" />
             <div className={styles.title}>
-                <img src={post.author.avatar.url} alt="Author avatar" />
                 <div className={styles.authtext}>
                     <h6>By {post.author.name}</h6>
                     <h6 className={styles.date}>{post.datePublished}</h6>
