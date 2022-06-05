@@ -68,7 +68,7 @@ const Subscribe = ({ openSubscribe, setOpenSubscribe, cancelButtonRef }) => {
                                     </div>
                                     <button
                                         type="button"
-                                        className="col-span-1 p-2 inline-flex justify-center rounded-full border-2 border-transparent shadow-sm bg-indigo-600 hover:bg-white hover:text-indigo-600 hover:border-indigo-600 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                                        className="ml-4 col-span-1 p-1 sm:p-2 inline-flex justify-center rounded-md sm:rounded-full border-2 border-transparent shadow-sm bg-indigo-600 hover:bg-white hover:text-indigo-600 hover:border-indigo-600 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
                                         onClick={() => setOpenSubscribe(false)}
                                     >
                                         Sign Up

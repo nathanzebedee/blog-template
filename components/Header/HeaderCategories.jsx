@@ -4,7 +4,7 @@ const HeaderCategories = ({ categoryType, setCategoryType }) => {
 
     const categories = [
         { type: 'Opinions' },
-        { type: 'Cybersecurity' },
+        { type: 'Cyber' },
         { type: 'Blockchain' },
         { type: 'WebDev' },
         { type: 'University' },
@@ -19,8 +19,8 @@ const HeaderCategories = ({ categoryType, setCategoryType }) => {
                     onClick={() => setCategoryType(category.type)}
                     className={
                         categoryType === category.type
-                            ? `flex cursor-pointer text-gray-300 border-2 rounded-md h-20 justify-center items-center font-bold tracking-wider text-xl md:text-2xl lg:text-3xl`
-                            : `flex cursor-pointer text-[#302f3d] bg-gradient-to-r from-blue-100 to-purple-100 border-2 rounded-md h-20 justify-center items-center font-bold tracking-wider text-xl md:text-2xl lg:text-3xl`
+                            ? `flex cursor-pointer text-gray-300 border-2 border-white rounded-md h-20 justify-center items-center font-bold tracking-wider text-sm md:text-2xl lg:text-3xl`
+                            : `flex cursor-pointer text-[#302f3d] border-2 border-transparent bg-gradient-to-r from-blue-100 to-purple-100 rounded-md h-20 justify-center items-center font-bold tracking-wider text-sm md:text-2xl lg:text-3xl`
                         }
                 >
                     <h4>{category.type}</h4>

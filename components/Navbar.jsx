@@ -19,24 +19,27 @@ const Navbar = ({ selected, setOpenContact, setOpenSubscribe }) => {
                 <>
                     <div className="max-w-7xl sm:pt-4 mx-auto px-2 sm:px-6 lg:px-8">
                         <div className="relative flex justify-between items-center h-16">
-                            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                                {/* MOBILE MENU BUTTON */}
-                                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                                    <span className="sr-only">Open main menu</span>
-                                    {open ? (
-                                        <XIcon className="block h-6 w-6" aria-hidden="true" />
-                                    ) : (
-                                        <MenuIcon className="block h-6 w-6" aria-hidden="true" />
-                                    )}
-                                </Disclosure.Button>
-                            </div>
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
-                                <div className="flex-shrink-0 flex items-center">
-                                    <h3 className='text-white font-semibold text-lg sm:text-2xl'>
-                                        nathan's website 🌚
-                                    </h3>
+                                <div className="flex-shrink-0 flex justify-between items-center w-full sm:w-1/2 px-4 sm:px-0">
+                                    <h3 className='text-white font-semibold text-md sm:text-2xl hidden sm:block'>nathan's website 🌚</h3>
+                                    <h3 className='text-white font-semibold text-md sm:text-2xl block sm:hidden'>nathan's website</h3>
+                                    {/* MOBILE BUTTONS */}
+                                    <div className='block sm:hidden'>
+                                        <button
+                                            onClick={() => setOpenContact(true)}
+                                            className='px-3 py-1 mr-4 rounded-full text-xs font-semibold text-white hover:text-gray-800 hover:bg-gray-300 border-2 border-gray-300'
+                                        >
+                                            reach out
+                                        </button>
+                                        <button
+                                            onClick={() => setOpenSubscribe(true)}
+                                            className='px-3 py-1 rounded-full text-xs font-semibold text-white hover:text-gray-800 border-2 border-gray-300 bg-gradient-to-r from-blue-400 to-purple-400'
+                                        >
+                                            subscribe
+                                        </button>
+                                    </div>
                                 </div>
-                                {/* DESKTOP MENU */}
+                                {/* DESKTOP BUTTONS */}
                                 <div className="hidden sm:block sm:ml-6">
                                     <div className="flex space-x-4">
                                         <button
@@ -56,32 +59,6 @@ const Navbar = ({ selected, setOpenContact, setOpenSubscribe }) => {
                             </div>
                         </div>
                     </div>
-
-                    {/* MOBILE DROPDOWN MENU */}
-                    <Disclosure.Panel className="sm:hidden">
-                        <div className="px-2 pt-2 pb-3 space-y-1">
-                            {navigation.map((item) => (
-                                <Disclosure.Button
-                                    key={item.name}
-                                    as="a"
-                                    aria-current={selected === item.name ? 'page' : undefined}
-                                    onClick={
-                                        item.name === 'reach out'
-                                            ? () => setOpenContact(true)
-                                            : () => setOpenSubscribe(true)
-                                    }
-                                    className={classNames(
-                                        selected === item.name
-                                            ? 'bg-gray-900 text-white'
-                                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                        'block px-3 py-2 rounded-md text-base font-medium'
-                                    )}
-                                >
-                                    {item.name}
-                                </Disclosure.Button>
-                            ))}
-                        </div>
-                    </Disclosure.Panel>
                 </>
             )}
         </Disclosure>

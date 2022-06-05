@@ -6,7 +6,7 @@ const PostsSection = ({ posts }) => {
     return (
         <section className='text-white w-full p-4'>
             <div className='m-2 h-max max-w-7xl mx-auto'>
-                <div className='grid grid-cols-3 gap-4'>
+                <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
                     {posts.map(post => (
                         <BlogCard
                             key={post.id}
