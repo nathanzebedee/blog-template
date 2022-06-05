@@ -46,7 +46,7 @@ const Home = ({ posts }) => {
                 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💫</text></svg>" />
             </Head>
 
-            <main className='flex flex-col flex-wrap min-h-screen items-center bg-[#302f3d]'>
+            <main className='flex flex-col flex-wrap min-h-screen items-center bg-gradient-to-tl from-[#403142] to-[#302f3d]'>
                 <Navbar
                     selected={selected}
                     setOpenContact={setOpenContact}

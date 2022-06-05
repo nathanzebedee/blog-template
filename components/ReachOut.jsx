@@ -58,7 +58,7 @@ const ReachOut = ({ openContact, setOpenContact }) => {
                                 <div className="mt-2 sm:mt-8 flex justify-center">
                                     <button
                                         type="button"
-                                        className="inline-flex justify-center w-1/3 rounded-full shadow-sm px-4 py-2 border-2 border-black bg-black text-base hover:bg-white hover:text-black font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-sm"
+                                        className="inline-flex justify-center w-1/3 rounded-full shadow-sm px-4 py-2 border-2 font-bold tracking-wide text-lg border-black bg-black hover:bg-white hover:text-black text-white focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-sm"
                                         onClick={() => setOpenContact(false)}
                                     >
                                         return
