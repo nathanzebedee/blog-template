@@ -2,29 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 
 const BlogCard = (props) => {
-
-    const styles = {
-        card: `bg-white cursor-pointer shadow-2xl m-4 w-64 rounded-2xl rounded-b-xl p-0`,
-
-        imageContainer: ``,
-        coverImage: `w-full object-cover rounded-xl rounded-b-none`,
-
-        text: `p-2`,
-        datePublished: `text-sm text-gray-500`,
-        postTitle: `font-semibold text-lg`,
-
-        details: `mt-4 flex justify-between items-center text-sm`,
-        author: `w-12 flex items-center `,
-        authorImage: `rounded-full w-8 h-8 mr-2`,
-        authorName: ``,
-        date: `text-gray-600`,
-    };
-
     return (
-        <div key={props.title} className="cursor-pointer flex flex-col rounded-lg shadow-lg overflow-hidden m-4">
+        <div key={props.title} className="flex flex-col rounded-lg shadow-lg overflow-hidden m-4">
             <div className="flex-shrink-0">
                 <Link href={`/posts/${props.slug}`}>
-                    <img className="h-48 w-full object-cover" src={props.coverPhoto.url} alt="Cover photo" />
+                    <img className="cursor-pointer h-48 w-full object-cover" src={props.coverPhoto.url} alt="Cover photo" />
                 </Link>
             </div>
             <div className="flex-1 bg-white p-6 flex flex-col justify-between">

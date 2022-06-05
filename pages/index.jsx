@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import { GraphQLClient, gql } from 'graphql-request';
 
 import BlogCard from '../components/BlogCard';
-import Header from '../components/Header';
+import Header from '../components/Header/Header';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -51,11 +51,8 @@ const Home = ({ posts }) => {
                     selected={selected} 
                     setSelected={setSelected} 
                 />
-                <Header 
-                    selected={selected} 
-                    setSelected={setSelected} 
-                />
-                <div className='border-2 flex flex-wrap justify-around'>
+                <Header />
+                {/* <div className='flex flex-wrap justify-around'>
                     {posts.map(post => (
                         <BlogCard
                             key={post.id}
@@ -66,7 +63,7 @@ const Home = ({ posts }) => {
                             datePublished={post.datePublished}
                         />
                     ))}
-                </div>
+                </div> */}
                 <Footer />
             </main>
         </>
