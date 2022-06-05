@@ -34,7 +34,7 @@ const Navbar = ({ selected, setSelected }) => {
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
                                 <div className="flex-shrink-0 flex items-center">
                                     <h3 className='text-white font-semibold text-2xl'>
-                                        nathan's website ✨
+                                        nathan's website 🌚
                                     </h3>
                                 </div>
                                 {/* DESKTOP MENU */}

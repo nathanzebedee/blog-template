@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const BlogCard = (props) => {
     return (
-        <div key={props.title} className="flex flex-col rounded-lg shadow-lg overflow-hidden m-4">
+        <div key={props.title} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
             <div className="flex-shrink-0">
                 <Link href={`/posts/${props.slug}`}>
                     <img className="cursor-pointer h-48 w-full object-cover" src={props.coverPhoto.url} alt="Cover photo" />

@@ -12,7 +12,7 @@ const HeaderAboutMe = () => {
                 </h2>
             </div>
             <div className='text-md lg:text-lg mt-8 flex items-center'>
-                <img src='NathanPhoto.jpg' className='w-40 h-40 rounded-2xl mr-4' />
+                <img src='NathanPhoto.jpg' className='h-40 rounded-2xl mr-4' />
                 <p>
                     hello, my name is nathan galindo and i am an honors student
                     studying management information systems and business analytics at <a href='https://www.baylor.edu/' target='_blank' rel='noreferrer' className='underline cursor-pointer hover:text-pink-200'>baylor university</a>.

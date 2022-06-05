@@ -47,23 +47,29 @@ const Home = ({ posts }) => {
                 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💫</text></svg>" />
             </Head>
             <main className='flex flex-col flex-wrap min-h-screen items-center bg-[#302f3d]'>
-                <Navbar 
-                    selected={selected} 
-                    setSelected={setSelected} 
+                <Navbar
+                    selected={selected}
+                    setSelected={setSelected}
                 />
                 <Header />
-                {/* <div className='flex flex-wrap justify-around'>
-                    {posts.map(post => (
-                        <BlogCard
-                            key={post.id}
-                            slug={post.slug}
-                            title={post.title}
-                            author={post.author}
-                            coverPhoto={post.coverPhoto}
-                            datePublished={post.datePublished}
-                        />
-                    ))}
-                </div> */}
+
+                <section className='text-white w-full p-4'>
+                    <div className='m-2 h-max max-w-7xl mx-auto'>
+                        <div className='grid grid-cols-3 gap-4'>
+                            {posts.map(post => (
+                                <BlogCard
+                                    key={post.id}
+                                    slug={post.slug}
+                                    title={post.title}
+                                    author={post.author}
+                                    coverPhoto={post.coverPhoto}
+                                    datePublished={post.datePublished}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
                 <Footer />
             </main>
         </>

@@ -6,7 +6,8 @@ const HeaderCategories = () => {
         { type: 'Opinions' },
         { type: 'Cybersecurity' },
         { type: 'Blockchain' },
-        { type: 'University' }
+        { type: 'University' },
+        { type: 'All' }
     ];
 
     return (
