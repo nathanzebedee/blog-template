@@ -1,18 +1,7 @@
 import React from 'react';
 import { Disclosure } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
-const Navbar = ({ selected, setOpenContact, setOpenSubscribe }) => {
-
-    const navigation = [
-        { name: 'reach out', special: false },
-        { name: 'newsletter sign up', special: false },
-    ];
-
-    function classNames(...classes) {
-        return classes.filter(Boolean).join(' ');
-    };
-
+const Navbar = ({ setOpenContact, setOpenSubscribe }) => {
     return (
         <Disclosure as="nav" className="bg-transparent w-full">
             {({ open }) => (
@@ -22,18 +11,17 @@ const Navbar = ({ selected, setOpenContact, setOpenSubscribe }) => {
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
                                 <div className="flex-shrink-0 flex justify-between items-center w-full sm:w-1/2 px-4 sm:px-0">
                                     <h3 className='text-white font-semibold text-md sm:text-2xl hidden sm:block'>nathan's website 🌚</h3>
-                                    <h3 className='text-white font-semibold text-md sm:text-2xl block sm:hidden'>nathan's website</h3>
                                     {/* MOBILE BUTTONS */}
-                                    <div className='block sm:hidden'>
+                                    <div className='mt-4 flex justify-between w-full'>
                                         <button
                                             onClick={() => setOpenContact(true)}
-                                            className='px-3 py-1 mr-4 rounded-full text-xs font-semibold text-white hover:text-gray-800 hover:bg-gray-300 border-2 border-gray-300'
+                                            className='px-3 py-1 mr-4 rounded-full text-md font-semibold text-white hover:text-gray-800 hover:bg-gray-300 border-2 border-gray-300'
                                         >
                                             reach out
                                         </button>
                                         <button
                                             onClick={() => setOpenSubscribe(true)}
-                                            className='px-3 py-1 rounded-full text-xs font-semibold text-white hover:text-gray-800 border-2 border-gray-300 bg-gradient-to-r from-blue-400 to-purple-400'
+                                            className='px-3 py-1 rounded-full text-md font-semibold text-white hover:text-gray-800 border-2 border-gray-300 bg-gradient-to-r from-blue-400 to-purple-400'
                                         >
                                             subscribe
                                         </button>
@@ -50,7 +38,7 @@ const Navbar = ({ selected, setOpenContact, setOpenSubscribe }) => {
                                         </button>
                                         <button
                                             onClick={() => setOpenSubscribe(true)}
-                                            className='px-3 py-1 rounded-full text-lg font-semibold text-white hover:text-gray-800 border-2 border-gray-300 bg-gradient-to-r from-blue-400 to-purple-400'
+                                            className='px-3 py-1 rounded-full text-lg font-semibold text-white hover:text-gray-800 hover:from-gray-300 hover:to-gray-300 border-2 border-gray-300 bg-gradient-to-r from-blue-400 to-purple-400'
                                         >
                                             subscribe
                                         </button>
