@@ -25,6 +25,7 @@ const HeaderAboutMe = () => {
                         studying management information systems and business analytics at <a href='https://www.baylor.edu/' target='_blank' rel='noreferrer' className='underline cursor-pointer hover:text-pink-200'>baylor university</a>.
                         i am a full stack developer with interests in blockchain technology and cybersecurity. i write about
                         student life, my journey as a software engineer, as well as reflections on my personal opinions and experiences.
+                        for more information on who i am, <a href='https://drive.google.com/file/d/1oQkg4-7rgaLQHdDlKbmpBSeBffIP_KlP/view?usp=sharing' target='_blank' rel='noreferrer' className='underline hover:text-pink-200'>please refer to my resume</a>.
                     </p>
                     <p className='mt-6'>
                         <span className='text-2xl tracking-wide font-bold underline'>disclaimer</span><br></br>

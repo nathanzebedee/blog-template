@@ -8,7 +8,7 @@ const BlogCard = (props) => {
     }, []);
 
     return (
-        <div key={props.title} className="border-2 flex flex-col rounded-lg shadow-lg overflow-hidden text-white">
+        <div key={props.title} className="border-2 flex flex-col rounded-lg shadow-lg overflow-hidden text-white hover:bg-gray-300 hover:text-[#302f3d]">
             <div className="flex-shrink-0">
                 <Link href={`/posts/${props.slug}`}>
                     <img className="cursor-pointer h-48 w-full object-cover" src={props.coverPhoto.url} alt="Blog post cover photo" />
@@ -23,7 +23,7 @@ const BlogCard = (props) => {
                 <div className="mt-4 flex items-center">
                     <div className="">
                         <p className="text-sm font-medium">
-                            <a target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/nathan-galindo-840835195/' className="hover:text-pink-200">
+                            <a target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/nathan-galindo-840835195/' className="hover:text-pink-600">
                                 {props.author.name}
                             </a>
                         </p>

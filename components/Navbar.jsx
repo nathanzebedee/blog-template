@@ -12,16 +12,16 @@ const Navbar = ({ setOpenContact, setOpenSubscribe }) => {
                                 <div className="flex-shrink-0 flex justify-between items-center w-full sm:w-1/2 px-4 sm:px-0">
                                     <h3 className='text-white font-semibold text-md sm:text-2xl hidden sm:block'>nathan's website 🌚</h3>
                                     {/* MOBILE BUTTONS */}
-                                    <div className='mt-4 flex justify-between w-full'>
+                                    <div className='flex w-full justify-between sm:hidden mt-4'>
                                         <button
                                             onClick={() => setOpenContact(true)}
-                                            className='px-3 py-1 mr-4 rounded-full text-md font-semibold text-white hover:text-gray-800 hover:bg-gray-300 border-2 border-gray-300'
+                                            className='px-3 py-1 mr-4 rounded-full text-lg font-semibold text-white hover:text-gray-800 hover:bg-gray-300 border-2 border-gray-300'
                                         >
                                             reach out
                                         </button>
                                         <button
                                             onClick={() => setOpenSubscribe(true)}
-                                            className='px-3 py-1 rounded-full text-md font-semibold text-white hover:text-gray-800 border-2 border-gray-300 bg-gradient-to-r from-blue-400 to-purple-400'
+                                            className='px-3 py-1 rounded-full text-lg hover:from-gray-300 hover:to-gray-300 font-semibold text-white hover:text-gray-800 border-2 border-gray-300 bg-gradient-to-r from-blue-400 to-purple-400'
                                         >
                                             subscribe
                                         </button>
