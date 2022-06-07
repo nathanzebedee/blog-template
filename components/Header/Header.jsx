@@ -4,15 +4,9 @@ import HeaderNav from './HeaderNav';
 import HeaderCategories from './HeaderCategories';
 import HeaderAboutMe from './HeaderAboutMe';
 
-const Header = () => {
+const Header = ({ categoryType, setCategoryType }) => {
 
     const [aboutMe, setAboutMe] = useState(true);
-    const [categoryType, setCategoryType] = useState('All');
-
-    // when new category is selected, make api call for blog posts of that category
-    useEffect(() => {
-        console.log(categoryType);
-    }, [categoryType]);
 
     return (
         <section className='text-white w-full p-4'>

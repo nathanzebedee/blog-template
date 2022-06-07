@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import BlogCard from './BlogCard';
 
-const PostsSection = ({ posts }) => {
+const PostsSection = ({ posts, categoryType }) => {
+
+    useEffect(() => {
+        console.log('POSTS');
+        posts.map(post => console.log(post.typeof));
+        console.log('TYPE', categoryType);
+    }, []);
+
     return (
         <section className='text-white w-full p-4'>
             <div className='flex justify-center mb-10'>
@@ -12,7 +19,8 @@ const PostsSection = ({ posts }) => {
             </div>
             <div className='m-2 h-max max-w-7xl mx-auto'>
                 <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
-                    {posts.map(post => (
+                    {categoryType === 'all' &&
+                        posts.map(post => (
                         <BlogCard
                             key={post.id}
                             slug={post.slug}
@@ -20,6 +28,21 @@ const PostsSection = ({ posts }) => {
                             author={post.author}
                             coverPhoto={post.coverPhoto}
                             datePublished={post.datePublished}
+                            typeof={post.typeof.typeof}
+                        />
+                    ))}
+                    {categoryType !== 'all' &&
+                        posts
+                        .filter(post => post.typeof.typeof === categoryType)
+                        .map(post => (
+                        <BlogCard
+                            key={post.id}
+                            slug={post.slug}
+                            title={post.title}
+                            author={post.author}
+                            coverPhoto={post.coverPhoto}
+                            datePublished={post.datePublished}
+                            typeof={post.typeof.typeof}
                         />
                     ))}
                 </div>

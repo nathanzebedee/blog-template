@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Head from 'next/head';
 import { GraphQLClient, gql } from 'graphql-request';
 
@@ -14,19 +14,18 @@ const graphCMS = new GraphQLClient(process.env.REACT_APP_GRAPH_CMS_API);
 const query = gql`
     {
         posts {
-        id,
-        title, 
-        datePublished,
-        slug,
-        content { html },
-        author {
-            name,
-            avatar { url }
-        },
-        coverPhoto {
-            url
+            id,
+            title, 
+            datePublished,
+            slug,
+            content { html },
+            author {
+                name,
+                avatar { url }
+            },
+            coverPhoto { url }
+            typeof
         }
-    }
     }
 `;
 
@@ -37,11 +36,15 @@ export const getStaticProps = async () => {
 
 const Home = ({ posts }) => {
 
-    const [selected, setSelected] = useState('blog');
     const [openContact, setOpenContact] = useState(false);
     const [openSubscribe, setOpenSubscribe] = useState(false);
+    const [categoryType, setCategoryType] = useState('all');
 
     const cancelButtonRef = useRef(null);
+
+    useEffect(() => {
+        console.log(categoryType);
+    }, [categoryType]);
 
     return (
         <>
@@ -52,7 +55,6 @@ const Home = ({ posts }) => {
 
             <main className='flex flex-col flex-wrap min-h-screen items-center bg-[#302f3d]'>
                 <Navbar
-                    selected={selected}
                     setOpenContact={setOpenContact}
                     setOpenSubscribe={setOpenSubscribe}
                     cancelButtonRef={cancelButtonRef}
@@ -69,9 +71,9 @@ const Home = ({ posts }) => {
                     cancelButtonRef={cancelButtonRef}
                 />
 
-                <Header />
+                <Header categoryType={categoryType} setCategoryType={setCategoryType} />
 
-                <PostsSection posts={posts} />
+                <PostsSection posts={posts} categoryType={categoryType} />
 
                 <Footer />
             </main>
