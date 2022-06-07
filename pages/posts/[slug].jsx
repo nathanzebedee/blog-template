@@ -1,13 +1,7 @@
 import React from 'react';
 import { GraphQLClient, gql } from 'graphql-request';
 
-const styles = {
-
-};
-
-const graphCMS = new GraphQLClient(
-    'https://api-us-east-1.graphcms.com/v2/cl3tb2rglblws01xk5pqwdwo6/master'
-);
+const graphCMS = new GraphQLClient(process.env.REACT_APP_SLUG_URL);
 
 const query = gql`
     query Post($slug: String!) {
@@ -46,17 +40,16 @@ export const getStaticProps = async ({ params }) => {
 
 const BlogPost = ({ post }) => {
     return (
-        <main className={styles.blog}>
-            <img src={post.coverPhoto} className={styles.cover} alt="Post cover photo" />
-            <div className={styles.title}>
-                <div className={styles.authtext}>
+        <main>
+            <img src={post.coverPhoto} alt="Post cover photo" />
+            <div>
+                <div>
                     <h6>By {post.author.name}</h6>
-                    <h6 className={styles.date}>{post.datePublished}</h6>
+                    <h6>{post.datePublished}</h6>
                 </div>
             </div>
             <h2>{post.title}</h2>
             <div
-                className={styles.content}
                 dangerouslySetInnerHTML={{ __html: post.content.html }}
             ></div>
         </main>
