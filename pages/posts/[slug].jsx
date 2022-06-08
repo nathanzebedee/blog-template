@@ -75,7 +75,7 @@ const BlogPost = ({ post }) => {
                             if (child.type === 'paragraph') {
                                 return (
                                     <>
-                                        <p className='text-xl w-5/6 lg:w-max'>
+                                        <p className='text-xl w-5/6'>
                                             {child.children[0].text}
                                         </p><br></br>
                                     </>
