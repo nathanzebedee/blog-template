@@ -1,7 +1,7 @@
 import React from 'react';
 import { GraphQLClient, gql } from 'graphql-request';
 
-const graphCMS = new GraphQLClient(process.env.REACT_APP_SLUG_URL);
+const graphCMS = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/cl3tb2rglblws01xk5pqwdwo6/master');
 
 const query = gql`
     query Post($slug: String!) {

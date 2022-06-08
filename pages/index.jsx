@@ -10,7 +10,7 @@ const ReachOut = dynamic(() => import('../components/ReachOut'), { ssr: false })
 const Subscribe = dynamic(() => import('../components/Subscribe'), { ssr: false });
 const PostsSection = dynamic(() => import('../components/Posts/PostsSection'), { ssr: false });
 
-const graphCMS = new GraphQLClient(process.env.REACT_APP_GRAPH_CMS_API);
+const graphCMS = new GraphQLClient('https://api-us-east-1.graphcms.com/v2/cl3tb2rglblws01xk5pqwdwo6/master');
 
 const query = gql`
     {
@@ -55,7 +55,7 @@ const Home = ({ posts }) => {
                 <title>Nathan's Blog</title>
                 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💫</text></svg>" />
             </Head>
-            
+
             <main className='flex flex-col flex-wrap min-h-screen items-center bg-[#302f3d]'>
                 <Navbar
                     setOpenContact={setOpenContact}
