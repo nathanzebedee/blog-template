@@ -47,8 +47,6 @@ const Home = ({ posts }) => {
         console.log(categoryType);
     }, [categoryType]);
 
-    const SSR = typeof window === 'undefined';
-
     return (
         <>
             <Head>
