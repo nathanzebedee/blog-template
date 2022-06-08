@@ -1,13 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import { GraphQLClient, gql } from 'graphql-request';
 
-import Header from '../components/Header/Header';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import ReachOut from '../components/ReachOut';
-import Subscribe from '../components/Subscribe';
-import PostsSection from '../components/Posts/PostsSection';
+// import Header from '../components/Header/Header';
+const Header = dynamic(() => import('../components/Header/Header'), { ssr: false });
+// import Navbar from '../components/Navbar';
+const Navbar = dynamic(() => import('../components/Navbar'), { ssr: false });
+// import Footer from '../components/Footer';
+const Footer = dynamic(() => import('../components/Footer'), { ssr: false });
+// import ReachOut from '../components/ReachOut';
+const ReachOut = dynamic(() => import('../components/ReachOut'), { ssr: false });
+// import Subscribe from '../components/Subscribe';
+const Subscribe = dynamic(() => import('../components/Subscribe'), { ssr: false });
+// import PostsSection from '../components/Posts/PostsSection';
+const PostsSection = dynamic(() => import('../components/Posts/PostsSection'), { ssr: false });
 
 const graphCMS = new GraphQLClient(process.env.REACT_APP_GRAPH_CMS_API);
 
@@ -46,6 +53,8 @@ const Home = ({ posts }) => {
         console.log(categoryType);
     }, [categoryType]);
 
+    const SSR = typeof window === 'undefined';
+
     return (
         <>
             <Head>
@@ -53,30 +62,32 @@ const Home = ({ posts }) => {
                 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💫</text></svg>" />
             </Head>
 
-            <main className='flex flex-col flex-wrap min-h-screen items-center bg-[#302f3d]'>
-                <Navbar
-                    setOpenContact={setOpenContact}
-                    setOpenSubscribe={setOpenSubscribe}
-                    cancelButtonRef={cancelButtonRef}
-                />
-                
-                <ReachOut
-                    openContact={openContact}
-                    setOpenContact={setOpenContact}
-                    cancelButtonRef={cancelButtonRef}
-                />
-                <Subscribe
-                    openSubscribe={openSubscribe}
-                    setOpenSubscribe={setOpenSubscribe}
-                    cancelButtonRef={cancelButtonRef}
-                />
 
-                <Header categoryType={categoryType} setCategoryType={setCategoryType} />
+                    <main className='flex flex-col flex-wrap min-h-screen items-center bg-[#302f3d]'>
+                        <Navbar
+                            setOpenContact={setOpenContact}
+                            setOpenSubscribe={setOpenSubscribe}
+                            cancelButtonRef={cancelButtonRef}
+                        />
+                        
+                        <ReachOut
+                            openContact={openContact}
+                            setOpenContact={setOpenContact}
+                            cancelButtonRef={cancelButtonRef}
+                        />
+                        <Subscribe
+                            openSubscribe={openSubscribe}
+                            setOpenSubscribe={setOpenSubscribe}
+                            cancelButtonRef={cancelButtonRef}
+                        />
 
-                <PostsSection posts={posts} categoryType={categoryType} />
+                        <Header categoryType={categoryType} setCategoryType={setCategoryType} />
 
-                <Footer />
-            </main>
+                        <PostsSection posts={posts} categoryType={categoryType} />
+
+                        <Footer />
+                    </main>
+
         </>
     );
 }

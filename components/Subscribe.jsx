@@ -1,10 +1,12 @@
 import React, { useEffect, Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { MailIcon } from '@heroicons/react/solid';
+import axios from 'axios';
 
 const Subscribe = ({ openSubscribe, setOpenSubscribe, cancelButtonRef }) => {
 
     const [input, setInput] = useState('');
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         console.log(input);
@@ -61,7 +63,11 @@ const Subscribe = ({ openSubscribe, setOpenSubscribe, cancelButtonRef }) => {
                                                 name="email"
                                                 id="email"
                                                 onChange={event => setInput(event.currentTarget.value)}
-                                                className="focus:ring-indigo-500 focus:border-indigo-500 block p-2 w-full pl-10 sm:text-sm border-gray-300 rounded-md"
+                                                className={
+                                                    error
+                                                        ? 'focus:ring-red-500 focus:border-red-500 block p-2 w-full pl-10 sm:text-sm border-red-300 rounded-md'
+                                                        : 'focus:ring-indigo-500 focus:border-indigo-500 block p-2 w-full pl-10 sm:text-sm border-gray-300 rounded-md'
+                                                }
                                                 placeholder="you@example.com"
                                             />
                                         </div>
