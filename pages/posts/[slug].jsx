@@ -75,7 +75,7 @@ const BlogPost = ({ post }) => {
                             if (child.type === 'paragraph') {
                                 return (
                                     <>
-                                        <p className='text-xl w-5/6'>
+                                        <p className='text-xl w-full'>
                                             {child.children[0].text}
                                         </p><br></br>
                                     </>
@@ -84,7 +84,7 @@ const BlogPost = ({ post }) => {
                             if (child.type === 'block-quote') {
                                 return (
                                     <>
-                                        <blockquote className='border-l-2 border-pink-600 bg-gradient-to-r from-blue-50 via-pink-100 to-purple-50 px-4 py-1 rounded-lg text-pink-600 italic w-5/6 lg:w-max'>
+                                        <blockquote className='border-l-2 border-pink-600 bg-gradient-to-r from-blue-50 via-pink-100 to-purple-50 px-4 py-1 rounded-lg text-pink-600 italic w-full'>
                                             {child.children[0].text}
                                         </blockquote><br></br>
                                     </>

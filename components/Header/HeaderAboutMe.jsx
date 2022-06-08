@@ -5,7 +5,7 @@ const HeaderAboutMe = () => {
         <div className='flex flex-col justify-start'>
             <div className='flex justify-between'>
                 <img src='NathanPhoto.jpg' className='block sm:hidden rounded-full h-20' />
-                <h2 className='text-3xl ml-4 sm:ml-0 sm:text-6xl italic'>
+                <h2 className='text-2xl ml-4 sm:ml-0 sm:text-6xl italic'>
                     your&#39;s truly,{' '}
                     <a href='https://www.linkedin.com/in/nathan-galindo-840835195/'
                         target='_blank'
