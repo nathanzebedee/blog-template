@@ -41,7 +41,7 @@ const ReachOut = ({ openContact, setOpenContact, cancelButtonRef }) => {
                                             feel free to reach out via the links below
                                         </p>
                                     </div>
-                                    <div className='my-4 flex justify-around'>
+                                    <div className='my-8 flex justify-around'>
                                         <a href='https://www.linkedin.com/feed/' target='_blank' rel='noreferrer'>
                                             <img src='/icons/linkedin.svg' className='h-8' />
                                         </a>
