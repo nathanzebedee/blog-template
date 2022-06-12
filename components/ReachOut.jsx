@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { CheckIcon } from '@heroicons/react/outline';
 
 const ReachOut = ({ openContact, setOpenContact, cancelButtonRef }) => {
     return (
         <Transition.Root show={openContact} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={setOpenContact}>
+            <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpenContact}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -18,7 +17,7 @@ const ReachOut = ({ openContact, setOpenContact, cancelButtonRef }) => {
                     <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
                 </Transition.Child>
 
-                <div className="fixed z-10 inset-0 overflow-y-auto">
+                <div className="fixed z-10 sm:inset-0 inset-y-52 overflow-y-auto">
                     <div className="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
                         <Transition.Child
                             as={Fragment}
@@ -29,30 +28,32 @@ const ReachOut = ({ openContact, setOpenContact, cancelButtonRef }) => {
                             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
-                            <Dialog.Panel className="relative bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-sm sm:w-full sm:p-6">
+                            <Dialog.Panel className="relative bg-gradient-to-r from-blue-100 via-pink-100 to-purple-100 rounded-xl px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full sm:p-6">
                                 <div>
-                                    <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-                                        <CheckIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
-                                    </div>
                                     <div className="mt-3 text-center sm:mt-5">
-                                        <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                                            Payment successful
+                                        <Dialog.Title as="h3" className="text-3xl font-bold tracking-wide leading-6 text-transparent bg-clip-text p-2 bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500">
+                                            let&#39;s get in touch!
                                         </Dialog.Title>
                                         <div className="mt-2">
-                                            <p className="text-sm text-gray-500">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet labore.
+                                            <p className="text-md text-gray-500">
+                                                feel free to contact me via the links below
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mt-5 sm:mt-6">
-                                    <button
-                                        type="button"
-                                        className="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
-                                        onClick={() => setOpen(false)}
-                                    >
-                                        Go back to dashboard
-                                    </button>
+                                <div className='my-6 flex justify-around'>
+                                    <a href='https://twitter.com/_zebedee_' target='_blank' rel='noreferrer' alt='twitter icon'>
+                                        <img src='/icons/twitter.svg' className='h-8 sm:h-9' />
+                                    </a>
+                                    <a href='https://www.linkedin.com/in/nathan-galindo-840835195/' target='_blank' rel='noreferrer' alt='linkedin icon'>
+                                        <img src='/icons/linkedin.svg' className='h-8 sm:h-9' />
+                                    </a>
+                                    <a href='https://discordapp.com/users/zorgon#2487' target='_blank' rel='noreferrer' alt='telegram icon'>
+                                        <img src='/icons/discord.svg' className='h-8 sm:h-9' />
+                                    </a>
+                                    <a href='mailto:nathan_galindo1@baylor.edu' target='_blank' rel='noreferrer' alt='email icon'>
+                                        <img src='/icons/email.svg' className='h-8 sm:h-9' />
+                                    </a>
                                 </div>
                             </Dialog.Panel>
                         </Transition.Child>
