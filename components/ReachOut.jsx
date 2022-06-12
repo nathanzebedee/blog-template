@@ -42,9 +42,15 @@ const ReachOut = ({ openContact, setOpenContact, cancelButtonRef }) => {
                                         </p>
                                     </div>
                                     <div className='my-4 flex justify-around'>
-                                        <img src='/icons/twitter.svg' className='h-8' />
-                                        <img src='/icons/linkedin.svg' className='h-8' />
-                                        <img src='/icons/twitter.svg' className='h-8' />
+                                        <a href='https://www.linkedin.com/feed/' target='_blank' rel='noreferrer'>
+                                            <img src='/icons/linkedin.svg' className='h-8' />
+                                        </a>
+                                        <a href='https://twitter.com/_zebedee_' target='_blank' rel='noreferrer'>
+                                            <img src='/icons/twitter.svg' className='h-8' />
+                                        </a>
+                                        <a href='mailto:nathan_galindo1@baylor.edu' target='_blank' rel='noreferrer'>
+                                            <img src='/icons/email.svg' className='h-8' />    
+                                        </a>
                                     </div>
                                     <div className="mt-5 sm:mt-6 justify-center flex">
                                         <button
