@@ -14,10 +14,10 @@ const ReachOut = ({ openContact, setOpenContact, cancelButtonRef }) => {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <div className="fixed blur-xl inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+                    <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
                 </Transition.Child>
 
-                <div className="fixed z-10 inset-x-0 inset-y-80 sm:inset-0">
+                <div className="fixed z-10 inset-0 inset-y-52 border-2 overflow-y-auto">
                     <div className="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
                         <Transition.Child
                             as={Fragment}
@@ -35,7 +35,7 @@ const ReachOut = ({ openContact, setOpenContact, cancelButtonRef }) => {
                                             let&#39;s get in touch!
                                         </Dialog.Title>
                                         <div className="mt-2">
-                                            <p className="text-sm text-gray-500">
+                                            <p className="text-md text-gray-500">
                                                 feel free to contact me via the links below
                                             </p>
                                         </div>
@@ -62,6 +62,6 @@ const ReachOut = ({ openContact, setOpenContact, cancelButtonRef }) => {
             </Dialog>
         </Transition.Root>
     );
-};
+}
 
 export default ReachOut;
