@@ -6,8 +6,11 @@ const HeaderAboutMe = () => {
             <div className='flex justify-between'>
                 <img src='NathanPhoto.jpg' className='block sm:hidden rounded-full h-20' />
                 <div>
-                    <h2 className='text-2xl ml-4 sm:ml-0 sm:text-6xl italic'>
+                    <h2 className='text-2xl ml-4 sm:ml-0 sm:text-6xl italic hidden sm:block'>
                         your&#39;s truly, <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-pink-300 to-purple-300'>nathan galindo✨</span>
+                    </h2>
+                    <h2 className='text-2xl ml-4 sm:ml-0 sm:text-6xl italic bloc sm:hidden'>
+                        your&#39;s truly, nathan galindo✨
                     </h2>
                 </div>
             </div>
