@@ -28,7 +28,7 @@ const ReachOut = ({ openContact, setOpenContact, cancelButtonRef }) => {
                             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
-                            <Dialog.Panel className="relative bg-gradient-to-r from-blue-100 via-pink-100 to-purple-100 rounded-xl px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full sm:p-6">
+                            <Dialog.Panel className="my-auto relative bg-gradient-to-r from-blue-100 via-pink-100 to-purple-100 rounded-xl px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full sm:p-6">
                                 <div>
                                     <div className="mt-3 text-center sm:mt-5">
                                         <Dialog.Title as="h3" className="text-3xl font-bold tracking-wide leading-6 text-transparent bg-clip-text p-2 bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500">
