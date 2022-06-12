@@ -6,14 +6,7 @@ const HeaderAboutMe = () => {
             <div className='flex justify-between'>
                 <img src='NathanPhoto.jpg' className='block sm:hidden rounded-full h-20' />
                 <h2 className='text-2xl ml-4 sm:ml-0 sm:text-6xl italic'>
-                    your&#39;s truly,{' '}
-                    <a href='https://www.linkedin.com/in/nathan-galindo-840835195/'
-                        target='_blank'
-                        rel='noreferrer'
-                        className='border-b-2 border-transparent hover:border-white cursor-pointer text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-pink-200 to-purple-300'
-                    >
-                        nathan galindo✨
-                    </a>
+                    your&#39;s truly, nathan galindo✨
                 </h2>
             </div>
             <div className='text-lg mt-8 grid grid-cols-3'>
