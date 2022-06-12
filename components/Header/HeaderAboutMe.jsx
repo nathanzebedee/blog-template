@@ -5,9 +5,11 @@ const HeaderAboutMe = () => {
         <div className='flex flex-col justify-start'>
             <div className='flex justify-between'>
                 <img src='NathanPhoto.jpg' className='block sm:hidden rounded-full h-20' />
-                <h2 className='text-2xl ml-4 sm:ml-0 sm:text-6xl italic'>
-                    your&#39;s truly, <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-pink-300 to-purple-300'>nathan galindo✨</span>
-                </h2>
+                <div>
+                    <h2 className='text-2xl ml-4 sm:ml-0 sm:text-6xl italic'>
+                        your&#39;s truly, <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-pink-300 to-purple-300'>nathan galindo✨</span>
+                    </h2>
+                </div>
             </div>
             <div className='text-lg mt-8 grid grid-cols-3'>
                 <img src='NathanPhoto.jpg' className='hidden sm:block rounded-xl col-span-1' />
